@@ -5,11 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matrículas</title>
+  <script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.3/html2pdf.bundle.min.js" 
+  integrity="sha512-yu5WG6ewBNKx8svICzUA01vozhmiQCVfzjzW40eCHJdsDRaOifh9hPlWBDex5b32gWCzawTp1F3FJz60ps6TnQ==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer">
+  </script>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body>
+<body id="content">
   <header></header>
   <main>
     <h1>Matrículas</h1>
@@ -25,15 +31,14 @@
       <option value="32">3° ano 2</option>
     </select>
 
-    <select name="" id=""> <!-- Conteúdo php -->
+    <select name="" id="alunos"> <!-- Conteúdo php -->
       <option value="">Selecione um aluno</option>
     </select>
 
-    <button onclick="turmas()">Mostrar turma</button>
-
+    <button onclick="generatePDF()">Download PDF</button>
   </main>
   <footer></footer>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js" defer></script>
 </body>
 
 </html>

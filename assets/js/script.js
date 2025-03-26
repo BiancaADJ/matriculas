@@ -21,7 +21,6 @@ document.getElementById("turmas").addEventListener("change", function(){
         table = "Indefinida";
     }
     console.log("Table selecionada: ", table);
-    alert(table);
 
     fetch('http://localhost:8000/lib/index.php',{
       method: 'POST',
@@ -31,7 +30,16 @@ document.getElementById("turmas").addEventListener("change", function(){
     .then(response => response.json())
     .then(data => {
       if(data.success){
-        alert("Conexão bem-sucedida! Dados: " + JSON.stringify(data.data));
+        console.log("Conexão bem-sucedida! Dados: " + JSON.stringify(data.data));
+        const selectElement = document.getElementById("alunos");
+        selectElement.innerHTML = '<option value="0">Selecione um aluno</option>';
+
+        data.data.forEach((nome, index) => {
+          const option = document.createElement("option");
+          option.value = index + 1;
+          option.textContent = nome;
+          selectElement.appendChild(option);
+        })
       }else{
         console.error("Erro:", data.message);
         alert("Erro: " + data.message);
@@ -39,3 +47,28 @@ document.getElementById("turmas").addEventListener("change", function(){
     })
   }
 });
+
+const btnGenerate = document.querySelector("#generate-pdf");
+
+function generatePDF(){
+  window.open('download.html', '_blank');
+  downloadPDF();
+  window.close();
+}
+
+// Função para gerar o PDF
+function downloadPDF(){
+  // Conteúdo do PDF
+  const content = document.querySelector("#content");
+
+  // Configurações do PDF
+  const options = {
+    margin: [10, 10, 10, 10],
+    filename: "arquivo.pdf",
+    html2canvas: {scale: 2},
+    jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
+  };
+
+  // Gerar e baixar PDF
+  html2pdf().set(options).from(content).save();
+};
