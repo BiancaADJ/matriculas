@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 }
 
 // **Proteção contra SQL Injection** para o nome da tabela
-$allowed_tables = ['1_ano1', '1_ano2', '1_ano3', '2_ano1', '2_ano2', '3_ano1', '3_ano2'];
+$allowed_tables = ['1_ano1', '1_ano2', '1_ano3', '2_ano1', '2_ano2', '3_ano1', '3_ano2', '4_ano', '5_ano1', '5_ano2', '6_ano', '7_ano', '8_ano1', '8_ano2', '9_ano1', '9_ano2', '1_serie', '2_serie', '3_serie'];
 if (!in_array($table, $allowed_tables)) {
   echo json_encode(['success' => false, 'message' => 'Tabela inválida']);
   exit;

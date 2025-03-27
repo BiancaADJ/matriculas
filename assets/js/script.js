@@ -17,6 +17,20 @@ document.getElementById("turmas").addEventListener("change", function(){
       case 22: table = "2_ano2"; break;
       case 31: table = "3_ano1"; break;
       case 32: table = "3_ano2"; break;
+      case 4: table = "4_ano"; break;
+      case 51: table = "5_ano1"; break;
+      case 52: table = "5_ano2"; break;
+
+      case 6: table = "6_ano"; break;
+      case 7: table = "7_ano"; break;
+      case 81: table = "8_ano1"; break;
+      case 82: table = "8_ano2"; break;
+      case 91: table = "9_ano1"; break;
+      case 92: table = "9_ano2"; break;
+
+      case 1: table = "1_serie"; break;
+      case 2: table = "2_serie"; break;
+      case 3: table = "3_serie"; break;
       default:
         table = "Indefinida";
     }
