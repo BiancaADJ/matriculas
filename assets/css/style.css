@@ -1,7 +1,8 @@
 body{
-  margin: 10vh;
+  width: 100%;
+  padding: 50px 100px;
   font-family: 'Poppins', sans-serif;
-  h2, span{
+  h2, span, .tag{
     font-weight: bold;
   }
 }
@@ -16,6 +17,12 @@ header{
 section#content{
   border-radius: 5px;
   margin-top: 5vh;
+}
+
+.display{
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 div.boas_vindas{
@@ -107,18 +114,27 @@ div.acesso{
   }
 }
 
+.tag{
+  color: #0047ab;
+}
+
 div.passo-a-passo{
+  justify-content: space-between;
   margin-top: 15px;
   padding-block: 10px;
   padding-inline: 30px;
   border: 3px solid #b0e0e6;
   border-radius: 5px;
   margin-top: 15px;
+  display: flex;
   #menu{
     width: 30px;
   }
   #print{
-    width: 50vh;
+    height: 30vh;
   }
-
+  p{
+    line-height: 4vh;
+    color: black;
+  }
 }
