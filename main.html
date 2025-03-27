@@ -15,27 +15,82 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body id="content">
-  <header></header>
+<body>
+  <header>
+    <img src="./assets/img/logomarca caetano.png" alt="Logomarca Colégio Caetano">
+  </header>
   <main>
-    <h1>Matrículas</h1>
-    <!-- Conteúdo da página em teste -->
-    <select name="Turmas" id="turmas">
-      <option value="0">Selecione uma turma</option>
-      <option value="11">1° ano 1</option>
-      <option value="12">1° ano 2</option>
-      <option value="13">1° ano 3</option>
-      <option value="21">2° ano 1</option>
-      <option value="22">2° ano 2</option>
-      <option value="31">3° ano 1</option>
-      <option value="32">3° ano 2</option>
-    </select>
+    <section>
+      <!-- Conteúdo da página em teste -->
+      <select name="Turmas" id="turmas">
+        <option value="0">Selecione uma turma</option>
+        <option value="11">1° ano 1</option>
+        <option value="12">1° ano 2</option>
+        <option value="13">1° ano 3</option>
+        <option value="21">2° ano 1</option>
+        <option value="22">2° ano 2</option>
+        <option value="31">3° ano 1</option>
+        <option value="32">3° ano 2</option>
+      </select>
+      
+      <select name="" id="alunos"> <!-- Conteúdo php -->
+        <option value="">Selecione um aluno</option>
+      </select>
+      <button onclick="generatePDF()">Download PDF</button>
+    </section>
+    <section id="content" class="section_dados" style="display: block;">
+      <div class="boas_vindas">
+        <div class="logo">
+          <h2>Boas-vindas</h2><img src="./assets/img/logo bernoulli.png" alt="Logo Bernoulli">
+        </div>
+        <p>Esses são os dados de acesso para entrar na plataforma.</p>
+      </div>
 
-    <select name="" id="alunos"> <!-- Conteúdo php -->
-      <option value="">Selecione um aluno</option>
-    </select>
+      <div class="aluno">
+        <div>
+          <img src="./assets/img/usuario.png" alt="Imagem de Usuário">
+          <span id="db_nome">NOME DO ESTUDANTE</span>
+        </div>
+        <div>
+          <a>
+            <div>
+              <h2>MATRÍCULA:</h2> <span id="db_matricula">00000000</span>
+            </div>
+            <div>
+              <h2>TURMA:</h2> <span id="table">0000</span>
+            </div>
+          </a>
+        </div>
+      </div>
 
-    <button onclick="generatePDF()">Download PDF</button>
+      <div class="acesso">
+        <div>
+          <img src="./assets/img/cadeado-trancado.png" alt="ìcone de cadeado">
+          <h2>Dados de acesso</h2>
+        </div>
+        <p>Use estes dados para entrar na plataforma</p>
+        <div>
+          <a>
+            <div>
+              <h2>EMAIL:</h2> <span id="db_login">login@gmail.com</span>
+            </div>
+            <div>
+              <h2>SENHA:</h2> <span id="db_senha">senha12345</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="passo-a-passo">
+        <div>
+          <a><img id="menu" src="./assets/img/menu.png" alt="Imagem de Opções"><h2>Passo a Passo para o primeiro acesso</h2></a>
+        </div>
+        <div>
+          <img id="print" src="./assets/img/pint-login.png" alt="">
+        </div>
+      </div>
+
+    </section>
   </main>
   <footer></footer>
   <script src="./assets/js/script.js" defer></script>
